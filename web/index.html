@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>دفتر العهد</title>
+<meta name="theme-color" content="#0F5257">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="دفتر العهد">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="authView" hidden></div>
+<div id="app" hidden>
+  <header class="hdr"><div class="in">
+    <div class="brand"><i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg></i><span>دفتر العهد</span></div>
+    <div class="who"><div class="pal" id="pal" role="group" aria-label="لون التطبيق"></div><span id="whoName"></span><span class="pill" id="whoRole"></span>
+      <button type="button" class="hbtn" data-act="pw">كلمة المرور</button><button type="button" class="hbtn" data-act="logout">خروج</button></div>
+  </div></header>
+  <div class="wrap"><main id="view"><div class="empty">جارٍ التحميل…</div></main></div>
+  <nav class="nav" id="nav" aria-label="التنقل الرئيسي"></nav>
+</div>
+<div id="toast" class="toast" hidden role="status"></div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
+}
+</script>
+</body>
+</html>
